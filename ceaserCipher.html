@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Caesar Cipher</title>
+		<script>
+			function encrypt(str)
+			{
+				var brokenString = str.split(""); //breaks up the input string
+				var numShift = Math.floor((Math.random() * 26) + 1); //picks the number to shift
+				for (i = 0; i < brokenString.length; i++)
+				{
+					brokenString[i] = String.fromCharCode(str.charCodeAt(i) + numShift); //shifts every letter in the new array by the number
+				}
+				return brokenString.join(""); //rejoins them and returns the string of shifted letters
+			}
+		</script>
+	</head>
+	<body>
+		<form id=main>
+			<input type=text id=message value="">
+			<input type=button id=startGame value="Encode message" onClick="alert(encrypt(message.value))">
+		</form>
+	</body>
+</html>
